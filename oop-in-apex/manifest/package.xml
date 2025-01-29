@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>62.0</version>
+
+
+    <!-- you list the metadata you want to retrieve from your org -->
+    <types>
+        <members>Account</members>
+        <members>Course__c</members>
+        <name>CustomObject</name>
+    </types>
+
+    <!-- or retrieve everything within a metatadata type with * -->
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+
+
+    <!-- 
+        standard and custom fields
+        list views
+        security settings
+        assignment rules
+        etc.
+    -->
+
+</Package>
