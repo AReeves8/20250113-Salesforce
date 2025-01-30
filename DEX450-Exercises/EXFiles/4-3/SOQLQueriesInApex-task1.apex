@@ -8,5 +8,5 @@
 //         - Where the value of the Id field of the Case sObject equals
 //           the Id of a Case record you find in the Salesforce UI.
 
-
+Case aCase = [SELECT Subject FROM Case WHERE Id = '5004U00001O0NfGQAV'];
 System.debug(aCase);

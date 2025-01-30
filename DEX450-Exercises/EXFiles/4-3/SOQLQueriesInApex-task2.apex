@@ -6,9 +6,15 @@
 //      caseList and assign it the value of a SOQL query that
 //   - Selects the Id field
 //   - From the Case sObject
+// List<Case> caseList = [SELECT Subject FROM Case];
+
+// System.debug('\n\nTotal number of cases: ' + caseList.size());
+// for (Case c : caseList) {
+//     System.debug(c);
+// }
 
 
-System.debug('\n\nTotal number of cases: ' + caseList.size());
-for (Case c : caseList) {
+// SOQL For-Loop
+for (Case c : [SELECT Subject FROM Case]) {
     System.debug(c);
 }
