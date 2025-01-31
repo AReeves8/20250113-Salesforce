@@ -18,7 +18,7 @@ String selectClause = 'SELECT Id, Status, Subject ';
 String fromClause = 'FROM Case ';
 
 //TODO: fill in the whereClause variable according to the spec
-String whereClause = 'PLEASE_FILL_ME_IN';    
+String whereClause = 'WHERE RecordTypeId = \'' + productSupportId + '\'';    
 
 String fullQuery = selectClause + fromClause + whereClause;
 List<Case> cases = Database.query(fullQuery);
@@ -27,5 +27,5 @@ for (Case c : cases) {
     System.debug(c);
 }
 
-// NOTE [SELECT Id, Status, Subject FROM Case WHERE RecordType.DeveloperName='Product_Support']
+//[SELECT Id, Status, Subject FROM Case WHERE RecordType.DeveloperName='Product_Support']
 // works just fine as can follow the relationship to Record Type

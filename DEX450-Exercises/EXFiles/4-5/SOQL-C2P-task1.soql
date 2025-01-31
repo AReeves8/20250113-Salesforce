@@ -11,3 +11,4 @@
 //  copy it to your clipboard once you know it works
 //--------------------------------------------------------------------------------------------
 
+SELECT Name, Account.Name FROM Contact

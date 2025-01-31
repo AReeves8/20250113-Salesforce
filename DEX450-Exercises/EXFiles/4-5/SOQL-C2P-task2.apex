@@ -10,9 +10,9 @@
 //    "Contact: Erica Neumann is related to the following Account: Acme Corp"
 //--------------------------------------------------------------------------------------------
 
-for ( /* TODO: iterate over SOQL query of Contacts from Task 1 */ ) {
-    for (/* TODO: iterate over the the loop variable from outer loop */ ) {
+for ( List<Contact> contacts : [SELECT Name, Account.Name FROM Contact]) {
+    for (Contact con : contacts ) {
         //TODO: make the statement below dynamic
-        System.debug('Contact: Erica Neumann is related to the following Account: Acme Corp')
+        System.debug('Contact: ' + con.Name + ' is related to the following Account: ' + con.Account.Name);
     }
 }
