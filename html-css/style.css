@@ -1,0 +1,31 @@
+/**
+
+SELECTORS:
+    element - all tags of that element
+    class - all tags with this class attribute
+    id - all tags with this id (should only be one)
+*/
+
+/* element selector */
+h3 {
+    color: darksalmon;
+    font-size: large;
+    text-align: center;
+}
+
+
+/* class selector */
+.blue {
+    color: blue;
+}
+
+/* id selector */
+#p1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
+
+/* combine element and class selector */
+p.center {
+    text-align: center;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- metadata info - NEVER RENDERED -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Austin Reeves">
+    <title>Austin's Super Awesome HTML/CSS Intro</title>
+
+
+    <!-- 
+        3 ways to inlcude CSS in your HTML
+            1. external styling - html links to external stylesheet
+            2. internal styling - style tag to your HTML doc
+            3. inline styling - CSS is inline with the tag
+    -->
+
+    
+
+    <!-- INTERNAL STYLING -->
+    <style>
+        /* everything in this tag is CSS */
+
+        .blue {
+            color: aqua;
+        }
+
+    </style>
+
+    <!-- EXTERNAL STYLING -->
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<!-- the content of our webpage goes -->
+<body>
+    
+
+    <!-- 
+        SEMANTIC TAGS
+
+            - give *meaning* to your web page
+            - some tags describe content: h1-h6, img, form, etc.
+            - some tags descibe webpage location: header, footer, section, aside, etc.
+            - some other tags do a bit of both: nav, article
+    -->
+    <header>
+        <h1 class="blue">Austin's Super Awesome HTML/CSS Intro</h1>
+        <h3>Time to learn lots of super fun and amazing HTML and CSS</h3>
+    </header>
+
+
+    <!-- NON-SEMANTIC : div, span -->
+    <div>
+        this is a div tag
+    </div>
+
+    <article>
+        <p class="blue">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim eos assumenda reiciendis aut reprehenderit repellendus illum voluptates amet consequuntur beatae culpa deleniti ratione in architecto magnam consectetur impedit, ullam neque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laudantium dolorem dignissimos aliquid libero. Quam corrupti consectetur aperiam quo omnis nam tempore, unde esse voluptatum dignissimos maxime iusto sunt maiores.
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, corporis cumque facere quo asperiores quas accusamus dolorum beatae sint quaerat nihil quod commodi natus pariatur dignissimos iusto aliquam. Sunt, aliquam!
+        </p>
+
+        <!-- INLINE STYLING - takes presidence over external and internal -->
+        <p id="p1" class="center blue" style="color: blueviolet; font-size:large">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus ab maiores, harum minima totam quidem qui inventore? Voluptates, laboriosam? Placeat culpa in commodi saepe. Consequatur magni laboriosam nisi eligendi accusantium.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sit, aperiam in dolore distinctio quibusdam. Voluptatibus vel quod ad, quidem nihil tempora velit porro debitis repudiandae voluptatem perspiciatis error possimus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium esse inventore ad. Cumque aspernatur nihil maxime optio velit accusamus! Quam architecto ipsa quis, officia modi fugiat dignissimos est explicabo.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum officiis, possimus aliquam sequi nobis alias fuga aliquid tempora voluptates, facilis magnam eum nostrum cupiditate enim. Iusto alias possimus incidunt placeat.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptatibus nostrum sint rem porro quas sunt, nesciunt expedita deserunt fugit! Fugit amet debitis architecto itaque magnam libero corporis commodi accusamus!
+        </p>
+    </article>
+
+    <!-- lists -->
+    <div>
+        <h2>My Favorite Foods:</h2>
+        <ol class="blue">
+            <li>French Fries</li>
+            <li>Rice</li>
+            <li>Steak</li>
+        </ol>
+
+        <h2>My LEAST Favorite Foods:</h2>
+        <ul>
+            <li>Pickles</li>
+            <li>Brussel Sprouts</li>
+            <li>Cilantro</li>
+        </ul>
+
+    </div>
+
+
+    <footer>
+        <!-- a - anchor; links to other pages/sites -->
+        <a href="https://www.google.com" class="center">Google</a>
+    </footer>
+
+</body>
+</html>
