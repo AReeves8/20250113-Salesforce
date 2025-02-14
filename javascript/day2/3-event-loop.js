@@ -110,11 +110,11 @@ const gradeOutcome = checkGrade(80);
 //.then and .catches when returning return RESOLVED promises
 // .then and .catches when THROWING return REJECTED promises
 
-// Promise.reject(10)
-//         .then(data => { throw data * 3 })
-//         .then(data => console.log(data))
-//         .catch(err => console.error(err)) // 10
-//         .then(data => console.log(data)); // ??
+Promise.reject(10)
+        .then(data => { throw data * 3 })
+        .then(data => console.log(data))
+        .catch(err => console.error(err)) // 10
+        .then(data => console.log(data)); // ??
 
 
 // Promise States
