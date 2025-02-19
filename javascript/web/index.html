@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // here goes your JS code
+
+        // common event listeners include
+        // these can be added to pretty much all HTML elements
+        /*
+            onclick
+            onchange
+            onhover
+            onkeydown
+            onfocus (if i click on a Input)
+            onblur (when it's no longer focused)
+        */
+
+        console.log('Hello Browser');
+    </script>
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <button id="click-me-button">Click Me!</button>
+    <div>Times Clicked: <span id="click-counter">0</span></div>
+
+    <form id="user-form">
+        <div>
+            <label for="username">Username: </label>
+            <input id="username" name="username" />
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input id="password" name="password" type="password" />
+        </div>
+        <div>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <div>
+        <div>Active Users</div>
+        <div>
+            <ul id="active-user-list">
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
