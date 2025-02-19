@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <!-- attributes -->
+    <aura:attribute name="selectedObject" type="String" />
+    <aura:attribute name="objectsList" type="List" />
+    <aura:attribute name="objectSelected" type="Boolean" />
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+
+
+    <lightning:card>
+
+        <!-- dropdown menu for the list of objects to choose from -->
+        <lightning:combobox 
+            name="objectSelector"
+            label="Select the Object to Use"
+            options="{! v.objectsList }"
+            value="{! v.selectedObject }"
+            onchange="{! c.handleSelection }"
+            class="slds-var-p-around_small"
+        />
+
+        <!-- user cannot pick any fields until an object is selected -->
+        <aura:if isTrue="{! v.objectSelected }">
+            <div class="slds-var-p-around_small">
+                <c:auraFieldSelector objectToUse="{! v.selectedObject }" />
+            </div>
+        </aura:if>
+
+    </lightning:card>
+    
+</aura:component>

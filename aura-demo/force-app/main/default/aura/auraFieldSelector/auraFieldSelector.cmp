@@ -1,0 +1,39 @@
+<aura:component controller="DynamicObjectSearchController">
+
+    <aura:attribute name="objectToUse" type="String" />
+    <aura:attribute name="allFieldsList" type="List" />
+    <aura:attribute name="selectedFieldsList" type="List" />
+
+    <!-- run init function when the component is first rendered AND every time objectToUse changes -->
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:handler name="change" value="{! v.objectToUse }" action="{! c.init }" />
+
+    <!-- component event used to pass selected data back up to parent app -->
+    <aura:registerEvent 
+        name="objectSearchEvent" 
+        type="c:AuraDynamicObjectSearchEvent" 
+    />
+
+
+    <lightning:card>
+
+        <lightning:dualListbox 
+            name="fieldSelector"
+            label="Select the Fields You Want to Use"
+            options="{! v.allFieldsList }"
+            value="{! v.selectedFieldsList }"
+            max="10"
+        />
+
+        <div class="slds-var-p-around_small">
+            <lightning:button 
+                variant="brand"
+                label="Submit"
+                onclick="{! c.handleSubmit }"
+                class="slds-align_absolute-center"
+            />
+        </div>
+    
+    </lightning:card>
+
+</aura:component>

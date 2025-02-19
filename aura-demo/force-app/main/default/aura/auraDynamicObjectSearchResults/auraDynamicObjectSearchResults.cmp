@@ -1,0 +1,44 @@
+<aura:component controller="DynamicObjectSearchController">
+
+    <!-- Attributes -->
+    <aura:attribute name="selectedObject" type="String"/>
+    <aura:attribute name="selectedFields" type="List"/>
+    <aura:attribute name="errorMessage" type="String"/>
+    <aura:attribute name="tableRowData" type="Object"/>
+    <aura:attribute name="tableColData" type="List"/>
+
+
+    <aura:handler name="init" value="{! this }" action="{! c.init }" />
+    <aura:handler name="objectChange" value="{! v.selectedObject }" action="{! c.init }" />
+    <aura:handler name="fieldChange" value="{! v.selectedObject }" action="{! c.init }" />
+
+    <lightning:card>
+        <lightning:layout verticalAlign="center">
+            <lightning:layoutItem class="slds-var-p-around_small" size="12">
+
+                <!-- if there's an error, display the message -->
+                <aura:if isTrue="{! v.errorMessage }">
+                    <div class="slds-text-align_center slds-text-heading_medium slds-text-color_error">
+                        {! v.errorMessage }
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{! v.tableRowData }">
+
+                    <!-- display table if there's data -->
+                    <div class="slds-text-align_center slds-text-heading_large slds-var-p-around_medium">
+                        {! v.selectedObject } Records Returned
+                    </div>
+
+                    <lightning:datatable
+                        keyField="id"
+                        data="{! v.tableRowData }"
+                        columns="{! v.tableColData }"
+                        class="slds-var-p-around_small"
+                        hideCheckboxColumn="true"
+                    />
+                </aura:if>
+            </lightning:layoutItem>
+        </lightning:layout>        
+    </lightning:card>
+
+</aura:component>

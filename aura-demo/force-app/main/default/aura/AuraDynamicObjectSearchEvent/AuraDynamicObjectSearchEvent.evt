@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="component event to send selected objects and fields from child component to parent"> 
+    <aura:attribute name="object" type="String" />
+    <aura:attribute name="fields" type="String[]" />
+</aura:event>
