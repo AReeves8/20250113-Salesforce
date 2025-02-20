@@ -1,0 +1,24 @@
+<template>
+    
+    <lightning-layout multiple-rows vertical-align="space">
+
+        <lightning-layout-item padding="around-small" size="12">
+            <c-techs-certs-held account-id={recordId} onselectedids={handleSelectedIds}></c-techs-certs-held>
+        </lightning-layout-item>
+
+        <!-- only show cert attempts and courses if technicians have been slected -->
+        <template lwc:if={techIds}>
+
+            <lightning-layout-item padding="around-small" size="12">
+                <c-cert-attempts tech-ids={techIds}></c-cert-attempts>
+            </lightning-layout-item>
+    
+            <lightning-layout-item padding="around-small" size="12">
+                <c-courses-attended tech-ids={techIds}></c-courses-attended>
+            </lightning-layout-item>
+
+        </template>
+        
+    </lightning-layout>
+
+</template>
