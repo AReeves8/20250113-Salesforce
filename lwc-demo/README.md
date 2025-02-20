@@ -1,18 +1,39 @@
-# Salesforce DX Project: Next Steps
+# Testing
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+### Automated Setup
 
-## How Do You Plan to Deploy Your Changes?
+- `sf force lightning lwc test setup`
+- Note that now new test scripts have been added to `package.json`. If they haven't proceeed to manual setup.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+### Manual Setup
 
-## Configure Your Salesforce DX Project
+- Install node.js
+- `npm install`
+- `npm install @salesforce/sfdx-lwc-jest --save-dev`
+- add these to `scripts`
+  - ```
+    {
+        "scripts": {
+            ...
+            "test": "npm run test:unit",
+            "test:unit": "sfdx-lwc-jest",
+            "test:unit:watch": "sfdx-lwc-jest --watch",
+            "test:unit:debug": "sfdx-lwc-jest --debug",
+            "test:unit:coverage": "sfdx-lwc-jest --coverage"
+        },
+    }
+    ```
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+### Running Jest Tests
 
-## Read All About It
+- `npm run test:unit`: runs all tests
+- `npm run test:unit:watch`: runs all tests when a component is saved
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+
+### Notes
+- Test Driven Development (TDD)
+  - write your unit tests first then write your code to try and pass that test
+  - unit tests: testing individual features
+  - integration testing: test all of your units together
+- Jest Docs:
+  - https://jestjs.io/docs/getting-started
